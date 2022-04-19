@@ -1,0 +1,27 @@
+/**
+ * @author liuyuan
+ * @date 2022-04-19 00:08
+ * @since 0.1.0
+ */
+
+.header {
+    color: #fff;
+    background: #fff !important;
+
+    ul {
+        justify-content: center;
+    }
+}
+
+.content {
+    height: calc(100vh - 64px);
+}
+
+.footer {
+    color: #fff;
+    background: #7dbcea;
+}
+
+.sidebar {
+    background: #fafafa !important;
+}

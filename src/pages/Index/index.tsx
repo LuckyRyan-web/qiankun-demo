@@ -7,40 +7,17 @@
 import React, { useMemo, useState } from 'react'
 // import classnames from 'classnames'
 import style from './style.module.scss'
-import logo from './logo.svg'
+// import logo from './logo.svg'
 import { Layout, Menu, Button } from 'antd'
+import Nav from '@/components/Nav'
 
 interface IndexProps {}
 
 const Index: React.FC<IndexProps> = (props) => {
-    const [currentApp, setCurrentApp] = useState('React')
-
-    const apps = useMemo(() => {
-        return [
-            {
-                label: 'React',
-                value: 'React',
-            },
-            {
-                label: 'Vue',
-                value: 'Vue',
-            },
-        ]
-    }, [])
-
     return (
         <Layout>
             <Layout.Header className={style.header}>
-                <Menu
-                    mode='horizontal'
-                    onClick={(e) => {
-                        setCurrentApp(e.key)
-                    }}
-                    selectedKeys={[currentApp]}>
-                    {apps.map((v) => (
-                        <Menu.Item key={v.value}>{v.label}</Menu.Item>
-                    ))}
-                </Menu>
+                <Nav />
             </Layout.Header>
             <Layout>
                 <Layout.Sider className={style.sidebar}>
@@ -61,7 +38,7 @@ const Index: React.FC<IndexProps> = (props) => {
                     </Menu>
                 </Layout.Sider>
                 <Layout.Content className={style.content}>
-                    <Button type='primary'>Content</Button>
+                    <Button type='primary'>React Content</Button>
                 </Layout.Content>
             </Layout>
         </Layout>
