@@ -27,15 +27,15 @@ const Nav: React.FC<NavProps> = (props) => {
                 value: 'React',
                 route: '/',
             },
+            // {
+            //     label: 'Vue',
+            //     value: 'Vue',
+            //     route: '/vue',
+            // },
             {
-                label: 'Vue',
-                value: 'Vue',
-                route: '/vue',
-            },
-            {
-                label: 'microApp_Vue',
-                value: 'microApp_Vue',
-                route: '/app-vue-vite',
+                label: 'microApp',
+                value: 'microApp',
+                route: '/micro-react',
             },
         ]
     }, [])

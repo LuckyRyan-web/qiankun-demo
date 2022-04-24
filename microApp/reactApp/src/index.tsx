@@ -4,7 +4,7 @@ import './index.module.scss'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { createRoot } from 'react-dom/client'
-import { registerMicroApps, start } from 'qiankun'
+import './public-paths.js'
 
 // ReactDOM.render(
 //     <React.StrictMode>
@@ -12,17 +12,6 @@ import { registerMicroApps, start } from 'qiankun'
 //     </React.StrictMode>,
 //     document.getElementById('root')
 // )
-
-registerMicroApps([
-    {
-        name: 'reactApp',
-        entry: 'http://localhost:9000',
-        container: '#subapp-viewport',
-        activeRule: '/micro-react',
-    },
-])
-
-start()
 
 const rootElement = document.getElementById('root')
 const root = createRoot(rootElement!)
