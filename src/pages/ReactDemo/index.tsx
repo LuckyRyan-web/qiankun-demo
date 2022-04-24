@@ -4,27 +4,38 @@
  * @since 0.1.0
  */
 
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 //import classnames from 'classnames'
 //import style from './style.module.scss'
 import Nav from '@/components/Nav'
-import { loadMicroApp } from 'qiankun'
+import { loadMicroApp, MicroApp } from 'qiankun'
+import { useUnmount, useMount } from 'ahooks'
 
 interface ReactDemoProps {}
 
 const ReactDemo: React.FC<ReactDemoProps> = (props) => {
     const containerRef = useRef<HTMLDivElement>(null)
 
-    useEffect(() => {
+    const [microApp, setMicroApp] = useState<MicroApp | null>()
+
+    useMount(() => {
+        console.log('useMount')
         if (containerRef.current) {
-            loadMicroApp({
+            console.log('containerRef.current', containerRef.current)
+            const res = loadMicroApp({
                 name: 'reactApp',
                 entry: 'http://localhost:9000',
                 container: containerRef.current,
                 props: { brand: 'qiankun' },
             })
+            setMicroApp(res)
         }
-    }, [])
+    })
+
+    useUnmount(() => {
+        console.log('useUnmount')
+        microApp?.unmount()
+    })
 
     return (
         <div>
