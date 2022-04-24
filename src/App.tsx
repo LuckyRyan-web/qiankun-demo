@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import 'antd/dist/antd.less'
 
 import Index from '@/pages/Index'
-import Vue from '@/pages/Vue'
+import ReactDemo from '@/pages/ReactDemo'
 
 const App = () => {
     return (
@@ -12,7 +12,7 @@ const App = () => {
             <BrowserRouter>
                 <Routes>
                     <Route path='' element={<Index />}></Route>
-                    {/* <Route path='/vue' element={<Vue />}></Route> */}
+                    <Route path='/ReactDemo' element={<ReactDemo />}></Route>
                     {/* <Route path='/micro-react'></Route> */}
                 </Routes>
             </BrowserRouter>

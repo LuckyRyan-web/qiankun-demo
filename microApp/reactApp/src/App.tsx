@@ -6,9 +6,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 const App = () => {
     return (
         <>
-            <BrowserRouter>
+            <BrowserRouter
+                basename={window.__POWERED_BY_QIANKUN__ ? '/ReactDemo' : '/'}>
                 <Routes>
-                    <Route path="" element={<Index />}></Route>
+                    <Route path='' element={<Index />}></Route>
                 </Routes>
             </BrowserRouter>
         </>

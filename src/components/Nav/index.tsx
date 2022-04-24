@@ -7,7 +7,7 @@
 
 import React, { useMemo, useState, useCallback } from 'react'
 //import classnames from 'classnames'
-//import style from './style.module.scss'
+import style from './style.module.scss'
 import { Menu } from 'antd'
 import { useNavigate, useLocation } from 'react-router-dom'
 
@@ -27,11 +27,11 @@ const Nav: React.FC<NavProps> = (props) => {
                 value: 'React',
                 route: '/',
             },
-            // {
-            //     label: 'Vue',
-            //     value: 'Vue',
-            //     route: '/vue',
-            // },
+            {
+                label: 'ReactDemo',
+                value: 'ReactDemo',
+                route: '/ReactDemo',
+            },
             {
                 label: 'microApp',
                 value: 'microApp',
@@ -62,7 +62,8 @@ const Nav: React.FC<NavProps> = (props) => {
                 onClick={(e) => {
                     switchRouter(e.key)
                 }}
-                selectedKeys={[currentApp]}>
+                selectedKeys={[currentApp]}
+                className={style.header}>
                 {apps.map((v) => (
                     <Menu.Item key={v.value}>{v.label}</Menu.Item>
                 ))}

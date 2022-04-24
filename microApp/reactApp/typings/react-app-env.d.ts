@@ -1,6 +1,5 @@
 /// <reference types="react-scripts" />
 
-
 declare module '*.bmp' {
     const src: string
     export default src
@@ -58,4 +57,8 @@ declare module 'react-draggable-tags' {
     export class DraggableAreasGroup {
         addArea: Function
     }
+}
+
+declare interface Window {
+    __POWERED_BY_QIANKUN__: any
 }

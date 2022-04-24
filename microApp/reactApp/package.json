@@ -23,9 +23,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject",
     "dev:dtpl": "tsc -P .dtpl/tsconfig.json -w"
   },
@@ -44,6 +44,7 @@
   "devDependencies": {
     "prettier": "^2.6.2",
     "sass": "^1.50.0",
+    "simple-progress-webpack-plugin": "^2.0.0",
     "stylelint": "^13.6.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-rational-order": "^0.1.2",
